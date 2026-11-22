@@ -23,3 +23,9 @@ testdata/*.mp4
 .vscode/
 .idea/
 .DS_Store
+
+# 本地草稿与计划笔记（不入库）
+/.notes/
+/.scratch/
+/plan/
+*.local.md
