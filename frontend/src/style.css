@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body,
+  #app {
+    height: 100%;
+  }
+
+  body {
+    @apply bg-nexus-bg text-nexus-text font-sans antialiased overflow-hidden;
+    background-image:
+      radial-gradient(circle at 12% 8%, rgba(0, 255, 157, 0.08), transparent 42%),
+      radial-gradient(circle at 88% 92%, rgba(56, 189, 248, 0.09), transparent 46%);
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(120, 180, 255, 0.28);
+    border-radius: 999px;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply rounded-2xl border border-white/10 bg-nexus-panel shadow-panel backdrop-blur-xl;
+  }
+
+  .label-tech {
+    @apply font-mono text-[10px] uppercase tracking-[0.28em] text-nexus-dim;
+  }
+
+  .value-tech {
+    @apply font-mono text-xl font-semibold text-white;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full border px-3 py-1 font-mono text-[11px] tracking-wider;
+  }
+
+  .chip-green {
+    @apply border-nexus-green/40 bg-nexus-green/10 text-nexus-green;
+  }
+
+  .chip-warn {
+    @apply border-nexus-warn/45 bg-nexus-warn/10 text-nexus-warn;
+  }
+
+  .chip-dim {
+    @apply border-white/15 bg-white/5 text-nexus-dim;
+  }
+
+  .console-btn {
+    @apply relative w-full overflow-hidden rounded-xl border px-4 py-3 text-left font-mono text-sm
+      transition-all duration-200 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .console-btn-green {
+    @apply border-nexus-green/45 bg-nexus-green/10 text-nexus-green
+      hover:bg-nexus-green/20 hover:shadow-neon active:scale-[0.99];
+  }
+
+  .console-btn-warn {
+    @apply border-nexus-warn/45 bg-nexus-warn/10 text-nexus-warn
+      hover:bg-nexus-warn/20 hover:shadow-neon-warn active:scale-[0.99];
+  }
+
+  .console-btn-ghost {
+    @apply border-white/15 bg-white/5 text-nexus-text hover:border-white/30 hover:bg-white/10;
+  }
+
+  .grid-overlay {
+    background-image:
+      linear-gradient(rgba(120, 180, 255, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(120, 180, 255, 0.08) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(circle at 50% 50%, black 35%, transparent 78%);
+  }
+
+  .scanline {
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      rgba(0, 255, 157, 0.12) 48%,
+      rgba(0, 255, 157, 0.02) 52%,
+      transparent 100%
+    );
+    height: 42%;
+  }
+
+  .ticker-track {
+    animation: ticker 26s linear infinite;
+  }
+}
+
+@keyframes ticker {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.video-mirror {
+  transform: scaleX(-1);
+}
